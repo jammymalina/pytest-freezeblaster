@@ -40,8 +40,8 @@ disable = [
 [tool.mypy]
 ignore_missing_imports = true
 
-[tool.poetry.plugins.pytest11]
-freezeblaster = "pytest_freezeblaster"
+# [tool.poetry.plugins.pytest11]
+# freezeblaster = "pytest_freezeblaster"
 
 [build-system]
 requires = ["poetry-core"]
