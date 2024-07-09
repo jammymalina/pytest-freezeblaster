@@ -1,7 +1,6 @@
 import pytest
 from freezegun import freeze_time
 
-
 MARKER_NAME = "freeze_time"
 FIXTURE_NAME = "freezer"
 
