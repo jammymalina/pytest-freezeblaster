@@ -53,6 +53,4 @@ def pytest_configure(config):
     """
     Register our marker
     """
-    config.addinivalue_line(
-        "markers", "{}(...): use freezegun to freeze time".format(MARKER_NAME)
-    )
+    config.addinivalue_line("markers", "{}(...): use freezegun to freeze time".format(MARKER_NAME))
