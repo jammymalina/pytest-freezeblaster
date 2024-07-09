@@ -34,6 +34,9 @@ disable = [
   "C0116", # Missing function or method docstring (missing-function-docstring)
 ]
 
+[tool.poetry.plugins.pytest11]
+freezeblaster = "pytest_freezeblaster"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
