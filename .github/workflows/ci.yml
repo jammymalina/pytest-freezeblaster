@@ -9,6 +9,7 @@ jobs:
       fail-fast: false
       matrix:
         python-version: ["3.8", "3.9", "3.10", "3.11", "3.12"]
+        pytest-version: ["^4.0", "^5.0", "^6.0", "^7.0" "^8.0"]
 
     steps:
       - uses: actions/checkout@v3
@@ -26,6 +27,7 @@ jobs:
       - name: Install dependencies
         run: |
           poetry install --sync --no-interaction
+          poetry add pytest@${{ matrix.pytest-version }}
       - name: Run the code linting
         run: |
           poetry run black --check .

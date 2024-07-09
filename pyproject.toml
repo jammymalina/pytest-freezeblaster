@@ -7,11 +7,10 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.8"
-pytest = ">=7.0"
+pytest = ">=4.0"
 freezegun = "^1.5.1"
 
 [tool.poetry.group.dev.dependencies]
-pytest = "^8.2.2"
 black = "^24.4.2"
 isort = "^5.13.2"
 pylint = "^3.2.5"
