@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pytest-freezeblaster"
-version = "0.1.0"
+version = "1.0.0"
 description = "Wrap tests with fixtures in freeze_time"
 authors = ["Jakub Jantosik <jakub.jantosik@gmail.com>"]
 readme = "README.md"
