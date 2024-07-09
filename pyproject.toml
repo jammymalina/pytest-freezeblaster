@@ -11,7 +11,7 @@ freezeblaster = "pytest_freezeblaster"
 
 [tool.poetry.dependencies]
 python = "^3.8"
-pytest = ">=6.3"
+pytest = ">=6.2.5"
 freezegun = "^1.5.1"
 
 [tool.poetry.group.dev.dependencies]
