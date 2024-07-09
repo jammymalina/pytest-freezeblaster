@@ -37,6 +37,9 @@ disable = [
   "C0116", # Missing function or method docstring (missing-function-docstring)
 ]
 
+[tool.mypy]
+ignore_missing_imports = true
+
 [tool.poetry.plugins.pytest11]
 freezeblaster = "pytest_freezeblaster"
 
