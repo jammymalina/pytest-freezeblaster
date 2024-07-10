@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pytest-freezeblaster"
-version = "1.0.0"
+version = "1.0.1"
 description = "Wrap tests with fixtures in freeze_time"
 authors = ["Jakub Jantosik <jakub.jantosik@gmail.com>"]
 readme = "README.md"
@@ -27,7 +27,7 @@ include = "\\.pyi?$"
 
 [tool.isort]
 profile = "black"
-known_first_party = ["hdp_aws_auth"]
+known_first_party = ["pytest_freezeblaster"]
 
 [tool.pylint]
 disable = [
