@@ -1,0 +1,31 @@
+name: CI
+
+on: [push]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+        pytest-version: ["==6.2.5", "~=7.0", "~=8.0"]
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install pydantic
+        run: uv add 'pytest${{ matrix.pytest-version }}' && uv sync
+      - name: Run lint check
+        run: uv run ruff check --exit-non-zero-on-fix
+      - name: Run type check
+        run: uv run mypy src
+      - name: Run tests
+        run: uv run pytest tests
+      - name: Build the library
+        run: uv build
