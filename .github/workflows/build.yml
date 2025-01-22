@@ -19,8 +19,11 @@ jobs:
       - uses: ./.github/actions/setup
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Install pydantic
-        run: uv add 'pytest${{ matrix.pytest-version }}' && uv sync
+      - name: Install pytest
+        run: |
+          uv add 'pytest${{ matrix.pytest-version }}' && uv sync
+          pytest_version=$(echo 'import pytest; print(pytest.__version__)' | uv run -)
+          echo "Using pytest version: ${pytest_version}"
       - name: Run lint check
         run: uv run ruff check --exit-non-zero-on-fix
       - name: Run type check
