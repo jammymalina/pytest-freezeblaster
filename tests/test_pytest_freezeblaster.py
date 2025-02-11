@@ -66,9 +66,7 @@ def test_no_mark(testdir):
 
         def test_sth():
             assert datetime.datetime.now() > {}
-    """.format(
-            repr(datetime.now())
-        )
+    """.format(repr(datetime.now()))
     )
 
     result = testdir.runpytest("-v", "-s")
@@ -302,6 +300,37 @@ def test_class_just_fixture(testdir):
                 later = datetime.now()
 
                 assert now == later
+    """
+    )
+
+    result = testdir.runpytest("-v", "-s")
+    assert result.ret == 0
+
+
+def test_pydantic(testdir):
+    testdir.makepyfile(
+        """
+        from datetime import date, datetime, timezone
+        import pydantic
+        import pytest
+        import time
+
+        class DateModel(pydantic.BaseModel):
+            current_datetime: datetime
+            current_date: date
+
+        class TestAsClass(object):
+
+            @pytest.mark.freeze_time
+            def test_changing_date(self, freezer):
+                model = DateModel(
+                    current_datetime=datetime.now(timezone.utc),
+                    current_date=date.today(),
+                )
+                time.sleep(0.1)
+                assert model.current_datetime == datetime.now(timezone.utc)
+                assert model.current_date == date.today()
+
     """
     )
 

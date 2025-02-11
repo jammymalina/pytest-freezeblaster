@@ -1,6 +1,6 @@
 [project]
 name = "pytest-freezeblaster"
-version = "2.0.1"
+version = "2.0.2"
 description = "Wrap tests with fixtures in freeze_time"
 readme = "README.md"
 authors = [
@@ -15,8 +15,9 @@ dependencies = [
 
 [dependency-groups]
 dev = [
-    "mypy>=1.14.1",
-    "ruff>=0.9.2",
+    "mypy>=1.15.0",
+    "pydantic>=2.10.6",
+    "ruff>=0.9.6",
 ]
 
 [tool.ruff]
