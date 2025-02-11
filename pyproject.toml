@@ -1,6 +1,6 @@
 [project]
 name = "pytest-freezeblaster"
-version = "2.0.2"
+version = "2.0.3"
 description = "Wrap tests with fixtures in freeze_time"
 readme = "README.md"
 authors = [
@@ -9,7 +9,7 @@ authors = [
 requires-python = ">=3.10"
 classifiers = ["Framework :: Pytest"]
 dependencies = [
-    "freezeblaster==0.2.0",
+    "freezeblaster==0.3.0",
     "pytest>=6.2.5",
 ]
 
