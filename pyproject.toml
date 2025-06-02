@@ -1,29 +1,44 @@
 [project]
 name = "pytest-freezeblaster"
-version = "2.0.3"
+version = "2.0.4"
 description = "Wrap tests with fixtures in freeze_time"
 readme = "README.md"
 authors = [
     { name = "Jakub Jantosik", email = "jakub.jantosik@gmail.com" }
 ]
 requires-python = ">=3.10"
-classifiers = ["Framework :: Pytest"]
+classifiers = [
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Testers",
+    "Intended Audience :: Information Technology",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Internet",
+    "Framework :: Pytest",
+]
 dependencies = [
-    "freezeblaster==0.3.0",
+    "freezeblaster==0.4.0",
     "pytest>=6.2.5",
 ]
 
 [dependency-groups]
 dev = [
-    "mypy>=1.15.0",
-    "pydantic>=2.10.6",
-    "ruff>=0.9.6",
+    "mypy>=1.16.0",
+    "pydantic>=2.11.5",
+    "ruff>=0.11.12",
 ]
 
 [tool.ruff]
-line-length = 120
-
 target-version = "py311"
+line-length = 120
+lint.extend-select = ["I"]
 
 [project.entry-points.pytest11]
 freezeblaster = "pytest_freezeblaster"
